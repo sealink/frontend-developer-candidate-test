@@ -1,5 +1,11 @@
+<!-- There are a limit of 3 events shown.
+Event items are displayed as accordions. The first item loads in an active (open) state.
+Each event item has an image, when the item is active the relevant image swaps in.
+Each event item has a link, plus there is one general button in the component (use placeholder links). -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +14,84 @@
   <link rel="stylesheet" href="/dist/app.css">
   <script src="/dist/app.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    Add your markup here
+  <div class="container bg-blue">
+    <!-- <div> -->
+    <h1 class="on title">WHAT'S ON</h1>
+
+    <div class="accordion" id="accordionExample">
+      <!-- first event item -->
+      <div class="accordion-item">
+        <div class="accordion-header" id="headingOne">
+          <h2 class="accordion-title" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne">
+            Vivid Sydney
+          </h2>
+        </div>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <!-- <picture class="img-active"> -->
+            <img src="images/vivid-sydney.jpg" class="image-active" alt='vivid-sydney'>
+            <!-- </picture> -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo
+              a
+              porttitor.</p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <!-- second event item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed bg-blue" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+            <h3 class='date'>16 JUN</h3>
+            <h2 class='title'>
+              Queen's Birthday
+            </h2>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <picture>
+              <img src="images/queens-birthday-celebrations.jpg" class="img-fluid" alt='queens-birthday-celebrations'>
+            </picture>
+            <strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </strong> autem, impedit iste nam
+            tempora
+            neque? Praesentium fugiat maxime ratione voluptates, minima esse blanditiis, iusto, ex ipsa ea quos
+            necessitatibus qui!
+          </div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <div class='bg-blue title'>
+            <h3 class='date'>9 SEP</h3>
+            <h2 class='title'>Father's Day</h2>
+          </div>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <picture>
+                <img src="images/fathers-day-dining.jpg" class="img-fluid" alt='fathers-day-dining'>
+              </picture>
+              <strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </strong> autem, impedit iste nam
+              tempora
+              neque? Praesentium fugiat maxime ratione voluptates, minima esse blanditiis, iusto, ex ipsa ea quos
+              necessitatibus qui!
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+    <button class="button-gold" type="button">SEE ALL EVENTS ></button>
   </div>
 </body>
+
 </html>

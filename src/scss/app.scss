@@ -1,13 +1,99 @@
-// Libraries
-@import "~bootstrap";
-
-// Settings
-@import "settings";
-
 // Functions
 @import "functions/functions";
 
 // Components
 @import "components/typography";
 
+// Settings
+@import "settings";
+
+// Libraries
+@import "~bootstrap";
+
 // Add your custom scss here
+.bg-blue {
+  background-color: $blue-300;
+}
+
+/* What's on title */
+.on {
+  //   position: absolute;
+  width: 183px;
+  height: 45px;
+  left: 23px;
+  //   top: 60px;
+
+  //   font: $bebas-neue;
+  font-size: 50px;
+  //   line-height: 90%;
+  /* identical to box height, or 45px */
+  letter-spacing: 0.05em;
+}
+
+.title {
+  color: #fff;
+  font: $montserrat-400;
+}
+
+.button-gold {
+  /* Button-Gold */
+
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 20px;
+
+  display: flex;
+  background-color: $gold-300;
+  color: #fff;
+}
+
+.divider {
+  /* Gold 100 */
+  background: #ece7d4;
+  /* Gold 200 */
+  border: 1px solid #cebb8a;
+}
+
+.date {
+  color: #fff;
+  font: $montserrat-400;
+}
+
+.on-title-vertical {
+  /* What's On title */
+
+  position: absolute;
+  width: 183px;
+  height: 45px;
+  left: 103px;
+  top: 536px;
+
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 90%;
+  /* identical to box height, or 45px */
+
+  letter-spacing: 0.05em;
+
+  /* White */
+
+  color: #ffffff;
+
+  transform: rotate(-90deg);
+}
+.image-active {
+  /* Event image - active */
+  width: 361px;
+  height: 250px;
+  left: 20px;
+  top: 138px;
+}
+.accordion-title:hover {
+  cursor: pointer;
+}
