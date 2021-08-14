@@ -24,18 +24,24 @@
 }
 
 /* What's on title */
-.on {
-  //   position: absolute;
+.on-title {
+  position: absolute;
   width: 183px;
   height: 45px;
   left: 23px;
-  //   top: 60px;
+  top: 60px;
 
-  //   font: $bebas-neue;
+  // font: $bebas-neue;
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
   font-size: 50px;
-  //   line-height: 90%;
+  line-height: 90%;
   /* identical to box height, or 45px */
   letter-spacing: 0.05em;
+
+  /* White */
+  color: #ffffff;
 }
 
 .event-date {
@@ -65,27 +71,23 @@
   display: block;
 }
 
-.button-gold {
-  /* Button-Gold */
-
-  /* Auto Layout */
-
+.btn-gold {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 11px 20px;
 
-  display: flex;
   background-color: $gold-300;
-  color: #fff;
+  color: #ffffff;
+
+  height: 40px;
+  left: 21px;
 }
 
 .divider {
-  /* Gold 100 */
-  background: #ece7d4;
-  /* Gold 200 */
-  border: 1px solid #cebb8a;
+  background: $gold-100;
+  border: 1px solid $gold-200;
 }
 
 .on-title-vertical {
@@ -112,13 +114,21 @@
 
   transform: rotate(-90deg);
 }
-.image-active {
-  /* Event image - active */
+
+.image-sm {
   width: 361px;
   height: 250px;
   left: 20px;
   top: 138px;
 }
+
+.image-lg {
+  width: 505px;
+  height: 650px;
+  left: 203px;
+  top: 94px;
+}
+
 .accordion-title:hover {
   cursor: pointer;
 }
