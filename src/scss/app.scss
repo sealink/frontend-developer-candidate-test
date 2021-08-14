@@ -15,6 +15,14 @@
   background-color: $blue-300;
 }
 
+.link-gold {
+  color: $gold-300;
+  text-decoration: none;
+  &:hover {
+    color: $cream;
+  }
+}
+
 /* What's on title */
 .on {
   //   position: absolute;
@@ -30,9 +38,31 @@
   letter-spacing: 0.05em;
 }
 
-.title {
-  color: #fff;
-  font: $montserrat-400;
+.event-date {
+  /* SUB3 */
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  /* or 14px */
+  letter-spacing: 0.1em;
+
+  /* White */
+  color: #ffffff;
+  display: block;
+}
+
+.event-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 90%;
+  /* or 22px */
+
+  color: #ffffff;
+  display: block;
 }
 
 .button-gold {
@@ -56,11 +86,6 @@
   background: #ece7d4;
   /* Gold 200 */
   border: 1px solid #cebb8a;
-}
-
-.date {
-  color: #fff;
-  font: $montserrat-400;
 }
 
 .on-title-vertical {

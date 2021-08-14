@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \***********************/
 /***/ (() => {
 
-eval("console.log(\"Hello \")\n$(function () {\n\n    var active = true;\n\n    $('#collapse-init').click(function () {\n        if (active) {\n            active = false;\n            $('.panel-collapse').collapse('show');\n            $('.panel-title').attr('data-toggle', '');\n            $(this).text('Enable accordion behavior');\n        } else {\n            active = true;\n            $('.panel-collapse').collapse('hide');\n            $('.panel-title').attr('data-toggle', 'collapse');\n            $(this).text('Disable accordion behavior');\n        }\n    });\n\n    $('#accordion').on('show.bs.collapse', function () {\n        if (active) $('#accordion .in').collapse('hide');\n    });\n\n});\n\n//# sourceURL=webpack://sealink-frontend-dev-test/./src/js/app.js?");
+eval("console.log(\"Hello \")\n// $(function () {\n\n//     var active = true;\n\n//     $('#collapse-init').click(function () {\n//         if (active) {\n//             active = false;\n//             $('.panel-collapse').collapse('show');\n//             $('.panel-title').attr('data-toggle', '');\n//             $(this).text('Enable accordion behavior');\n//         } else {\n//             active = true;\n//             $('.panel-collapse').collapse('hide');\n//             $('.panel-title').attr('data-toggle', 'collapse');\n//             $(this).text('Disable accordion behavior');\n//         }\n//     });\n\n//     $('#accordion').on('show.bs.collapse', function () {\n//         if (active) $('#accordion .in').collapse('hide');\n//     });\n\n// });\n\n//# sourceURL=webpack://sealink-frontend-dev-test/./src/js/app.js?");
 
 /***/ })
 
