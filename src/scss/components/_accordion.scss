@@ -1,0 +1,84 @@
+@media screen and (min-width: $mobile) and (max-width: 1023px) {
+    .accordion {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .accordion {
+        padding-left: 30px;
+    }
+}
+
+.accordion {
+    :focus {
+        outline: 0 !important;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+      }
+    .accordion-item:not(:last-child) {
+        border-bottom: 1px solid $gold-300 !important;
+    }
+    .accordion-item:last-child {
+        border-bottom: none !important;
+    }
+    .accordion-item {
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+    .accordion-header {
+        button {
+            background-color: $blue-300;
+            p {
+                color: $cream;
+                text-transform: uppercase;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                font-weight: 600 !important;
+            }
+            h2 {
+                color: $cream;
+                font-family: "Montserrat", sans-serif;
+                font-size: 25px;
+            }
+            h2:hover {
+                font-weight: 600;
+                color: $gold-100;
+            }
+        }
+        .accordion-button::after {
+            display: none;
+        }
+        .accordion-button:not(.collapsed) {
+            h2 {
+                font-weight: 700;
+            }
+        }
+    }
+    .accordion-collapse {
+        box-shadow: none !important;
+    }
+    .accordion-body {
+        background-color: $blue-300;
+        p {
+            color: $cream;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $gold-300;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-family: "Montserrat", sans-serif;
+            transition: 0.3s;
+               
+        }
+        a:hover {
+            font-size: 15px;
+        }
+    }
+}
