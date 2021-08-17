@@ -11167,45 +11167,82 @@ textarea.form-control-lg {
 
 /* What's on title */
 .on-title {
-  position: absolute;
-  width: 183px;
-  height: 45px;
-  left: 23px;
-  top: 60px;
-  font-family: Bebas Neue;
+  font-family: "Bebas Neue", cursive;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 45px;
+  letter-spacing: 0.05em;
+  top: 60px;
+}
+
+/* What's On title - Vertical on large and wider screens*/
+.on-title-vertical {
+  transform: rotate(-90deg);
+  font-family: "Bebas Neue", cursive;
+  font-style: normal;
+  font-weight: 400;
   font-size: 50px;
   line-height: 90%;
-  /* identical to box height, or 45px */
   letter-spacing: 0.05em;
-  /* White */
+  left: 103px;
+  top: 536px;
+}
+
+.image-sm {
+  width: 361px;
+  height: 250px;
+  left: 20px;
+  top: 138px;
+}
+
+.image-lg {
+  position: absolute;
+  width: 505px;
+  height: 650px;
+  top: 94px;
+}
+
+.accordion-item {
+  background: #00526a;
+  border: none;
+}
+
+.accordion-button {
+  background: #00526a;
+  border: none;
+}
+.accordion-button:hover {
+  cursor: pointer;
+}
+.accordion-button:not(.collapsed) {
+  background: #00526a;
+}
+.accordion-button::after {
+  content: none;
+}
+
+.event-header {
+  font-family: "Montserrat", sans-serif 400;
+  font-weight: 500;
   color: #ffffff;
+  font-size: 22px;
+  line-height: 20px;
+  display: block;
+}
+
+.active {
+  font-family: "Montserrat", sans-serif 700;
+  font-size: 25px;
+  line-height: 22.5px;
 }
 
 .event-date {
-  /* SUB3 */
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif 700;
   font-size: 12px;
   line-height: 14px;
-  /* or 14px */
   letter-spacing: 0.1em;
-  /* White */
   color: #ffffff;
-  display: block;
-}
-
-.event-title {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 90%;
-  /* or 22px */
-  color: #ffffff;
-  display: block;
 }
 
 .btn-gold {
@@ -11218,6 +11255,7 @@ textarea.form-control-lg {
   color: #ffffff;
   height: 40px;
   left: 21px;
+  text-decoration: none;
 }
 
 .divider {
@@ -11225,39 +11263,8 @@ textarea.form-control-lg {
   border: 1px solid #cebb8a;
 }
 
-.on-title-vertical {
-  /* What's On title */
-  position: absolute;
-  width: 183px;
-  height: 45px;
-  left: 103px;
-  top: 536px;
-  font-family: Bebas Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 90%;
-  /* identical to box height, or 45px */
-  letter-spacing: 0.05em;
-  /* White */
-  color: #ffffff;
-  transform: rotate(-90deg);
-}
-
-.image-sm {
-  width: 361px;
-  height: 250px;
-  left: 20px;
-  top: 138px;
-}
-
-.image-lg {
-  width: 505px;
-  height: 650px;
-  left: 203px;
-  top: 94px;
-}
-
-.accordion-title:hover {
-  cursor: pointer;
+.white-striped {
+  width: 100%;
+  height: 141px;
+  background-color: white;
 }

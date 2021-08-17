@@ -1,24 +1,28 @@
-console.log("Hello ")
-// $(function () {
+// swap event image src based on active event
+// change event header font weight
+$("#btn-event1").click(function () {
+    $(".event-img").attr({
+        "src": "images/vivid-sydney.jpg"
+    })
+    $(".header-event1").addClass('active')
+    $(".header-event2").removeClass('active')
+    $(".header-event3").removeClass('active')
+})
 
-//     var active = true;
+$("#btn-event2").click(function () {
+    $(".event-img").attr({
+        "src": "images/queens-birthday-celebrations.jpg"
+    })
+    $(".header-event2").addClass('active')
+    $(".header-event1").removeClass('active')
+    $(".header-event3").removeClass('active')
+})
 
-//     $('#collapse-init').click(function () {
-//         if (active) {
-//             active = false;
-//             $('.panel-collapse').collapse('show');
-//             $('.panel-title').attr('data-toggle', '');
-//             $(this).text('Enable accordion behavior');
-//         } else {
-//             active = true;
-//             $('.panel-collapse').collapse('hide');
-//             $('.panel-title').attr('data-toggle', 'collapse');
-//             $(this).text('Disable accordion behavior');
-//         }
-//     });
-
-//     $('#accordion').on('show.bs.collapse', function () {
-//         if (active) $('#accordion .in').collapse('hide');
-//     });
-
-// });
+$("#btn-event3").click(function () {
+    $(".event-img").attr({
+        "src": "images/fathers-day-dining.jpg"
+    })
+    $(".header-event3").addClass('active')
+    $(".header-event1").removeClass('active')
+    $(".header-event2").removeClass('active')
+})
