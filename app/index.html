@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/dist/app.css">
-  <script src="/dist/app.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,500;0,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+
+    <!-- <script src="/dist/app.js"></script> -->
 </head>
+
 <body>
-  <div class="container">
-    Add your markup here
-  </div>
+    <div class="container">
+        <h1 class="topHeader">WHAT'S ON</h1>
+        <img src="./images/vivid-sydney.jpg" alt="Sydney opera house at night" id="eventImage" />
+
+        <div class="accordion" id="event-accordion">
+            <div class="dateContainer">
+                <span class="date">14-18 AUG</span>
+            </div>
+            <div class="accordion-item">
+                <span class="accordion-header bold-header" id="heading-Sydney">
+                    Vivid Sydney
+                </span>
+
+                <div id="body-Sydney" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Quis ac sagittis tristique platea praesent leo
+                        a porttitor.
+                        <div class="aContainer">
+                            <a href="https://www.google.com/" target="_blank">LEARN MORE </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dateContainer">
+                <span class="date">16 JUN</span>
+            </div>
+
+            <div class="accordion-item">
+                <span class="accordion-header" id="heading-Queens-bday">
+                    Queen's Birthday
+                </span>
+
+                <div id="body-Queens-bday" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Quis ac sagittis tristique platea praesent leo
+                        a porttitor.
+                        <div class="aContainer">
+                            <a href="https://www.google.com/" target="_blank">LEARN MORE </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dateContainer">
+                <span class="date">9 SEP</span>
+            </div>
+            <div class="accordion-item" id="fathers-day-item">
+
+                <span class="accordion-header" id="heading-Fathers-day">
+                    Father's Day
+                </span>
+
+                <div id="body-Fathers-day" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Quis ac sagittis tristique platea praesent leo
+                        a porttitor.
+
+                        <div class="aContainer">
+                            <a href="https://www.google.com/" target="_blank">LEARN MORE </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="allEvents">SEE ALL EVENTS
+                <span class="iconify" data-icon="bi:chevron-right"></span>
+            </button>
+        </div>
+    </div>
 </body>
+<script src="/dist/app.js"></script>
+
 </html>
