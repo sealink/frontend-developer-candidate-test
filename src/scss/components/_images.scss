@@ -1,0 +1,46 @@
+
+@media screen and (min-width: $mobile) and (max-width: 1023px) {
+    .desktop {
+        display: none;
+    }
+    button[aria-expanded="true"] {
+        #father-day, #celebration, #sydney {
+            display: block;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+        }
+    }
+    button[aria-expanded="false"] {
+        #father-day, #celebration, #sydney {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    #father-day, #celebration, #sydney {
+        display: none;
+    }
+    .desktop {
+        position: absolute;
+        top: 20px;
+        left: 150px;
+        width: 410px;
+        height: 610px;
+        z-index: 2;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    #father-day, #celebration, #sydney {
+        display: none;
+    }
+    .desktop {
+        position: absolute;
+        top: 20px;
+        left: 250px;
+        width: auto;
+        height: 710px;
+    }
+}
