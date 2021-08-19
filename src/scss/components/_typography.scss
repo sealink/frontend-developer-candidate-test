@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
 @mixin font($list) {
   font-family: nth($list, 1);
   font-weight: nth($list, 2);
@@ -54,3 +56,14 @@ h3,
   line-height: 0.9;
   letter-spacing: 0.05em;
 }
+
+$font-family-sans-serif: "Montserrat", sans-serif;
+$h1-font-size: calculateRem(70px);
+$h2-font-size: calculateRem(50px);
+$h3-font-size: calculateRem(30px);
+$h4-font-size: calculateRem(25px);
+$h5-font-size: calculateRem(12px);
+$font-size-base: calculateRem(15px);
+$letter-spacing-sm: 0.1em;
+$letter-spacing-md: 0.15em;
+$font-weight-bold: 700;

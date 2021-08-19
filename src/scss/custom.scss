@@ -1,0 +1,72 @@
+@import "settings";
+
+.letter-spacing-sm { letter-spacing: $letter-spacing-sm; }
+.letter-spacing-md { letter-spacing: $letter-spacing-md; }
+.cs-bg-centeirng {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cs-two-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cs-whatson-img {
+  position: relative;
+  max-height: 250px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  width: 100%;
+  opacity: 1;
+}
+.fadeInOut {
+  -webkit-transition: fadeinout 2s linear forwards;
+  -moz-transition: fadeinout 2s linear forwards;
+  -o-transition: fadeinout 2s linear forwards;
+  transition: fadeinout 2s linear forwards;
+}
+@-webkit-keyframes fadeinout {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeinout {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media screen and (min-width: 992px) {
+  .cs-verticaltext {
+    -moz-transform: translateX(-80%) translateY(300%) rotate(-90deg);
+    -webkit-transform: translateX(-80%) translateY(300%) rotate(-90deg);
+    transform:  translateX(-80%) translateY(300%) rotate(-90deg);
+    position: absolute;
+  }
+  .cs-whatson-wrapper {
+    max-height: calculateRem(500px);
+    min-height: calculateRem(500px);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .cs-accordion {
+    padding-left: 6vw !important;
+  }
+  .cs-whatson-img {
+    position: absolute;
+    height: calculateRem(600px);
+    top: calc(-3rem - 50px);
+    max-height: unset;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cs-verticaltext {
+    -moz-transform: translateX(-100%) translateY(300%) rotate(-90deg);
+    -webkit-transform: translateX(-100%) translateY(300%) rotate(-90deg);
+    transform:  translateX(-100%) translateY(300%) rotate(-90deg);
+  }
+}

@@ -1,0 +1,33 @@
+//Typography
+h5, a { 
+  letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight-bold;
+}
+p { line-height: $line-height-sm; }
+
+//Button
+.btn-primary {
+  @include button-variant(
+    $gold-300, transparent, white, // default (bg color, border color, color)
+    $gold-200, transparent, white, // on hover
+    $gold-300, transparent, white
+  );
+}
+
+.btn {
+  &:hover {
+    font-weight: $font-weight-bolder;
+  }
+}
+
+//Card
+.card {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border: 0px solid transparent;
+  &:first-child {
+    padding-top: 0;
+  }  
+}
+.card:not(:first-child) { border-top: $card-border-width solid $card-border-color; }
+.card-header { border-bottom-color: transparent; }

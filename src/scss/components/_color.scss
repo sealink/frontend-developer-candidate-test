@@ -1,0 +1,23 @@
+@import "../settings";
+
+$primary: $blue-300;
+$secondary: $gold-300;
+
+// set custom colors
+$custom-colors: (
+    "primary": $blue-300,
+    "secondary": $gold-300,
+    "light": $cream,
+    "blue-300": $blue-300,
+    "blue-200": $blue-200,
+    "blue-100": $blue-100,
+    "gold-300": $gold-300,
+    "gold-200": $gold-200,
+    "gold-100": $gold-100,
+    "charcoal": $charcoal,
+    "cream": $cream
+);
+
+// merge maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");

@@ -6,11 +6,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/dist/app.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="/dist/app.js"></script>
 </head>
 <body>
-  <div class="container">
-    Add your markup here
-  </div>
+    <main class="bg-light pt-5 pb-5">
+      <section class="cs-whatson-wrapper bg-primary pt-5 pb-5">
+        <div class="container">
+          <h2 class="cs-verticaltext mb-4 text-white">What's On</h2>
+          <div class="row">
+            <div class="col-12 col-lg-6 position-relative">
+                <div id="imgContainer" class="cs-whatson-imgs position-relative">
+                  <img id="whatsonImg" src="./images/vivid-sydney.jpg" alt="Vivid Sydney" class="cs-whatson-img"/>
+                </div>
+            </div>
+            <div class="cs-accordion col-12 col-lg-6">
+              <div class="accordion" id="whatsonAccordion">
+                <div class="card">
+                  <div class="card-header p-0" id="headingOne" data-img-src="./images/vivid-sydney.jpg" data-img-alt="Vivid Sydney">
+                      <div class="mb-0">
+                        <button class="btn w-100 text-start text-white  p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="text-uppercase mb-0 h5">14 - 18 AUG</span>
+                            <h4 class="headingText mb-0">Vivid Sydney</h4>
+                        </button>
+                      </div>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#whatsonAccordion">
+                      <div class="card-body text-white p-0">
+                        <p class="cs-two-lines pt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor</p>
+                        <a href="#" class="text-decoration-none text-uppercase mb-0 h5">Learn More</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header p-0" id="headingTwo" data-img-src="./images/queens-birthday-celebrations.jpg" data-img-alt="Queen's Birthday">
+                      <div class="mb-0">
+                        <button class="btn w-100 text-start text-white collapsed p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <span class="text-uppercase mb-0 h5">16 Jun</span>
+                          <h4 class="headingText mb-0">Queen's Birthday</h4>
+                        </button>
+                      </div>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#whatsonAccordion">
+                      <div class="card-body text-white p-0">
+                        <p class="cs-two-lines pt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor</p>
+                        <a href="#" class="text-decoration-none text-uppercase mb-0 h5">Learn More</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header p-0" id="headingThree" data-img-src="./images/fathers-day-dining.jpg" data-img-alt="Father's Day">
+                      <div class="mb-0">
+                        <button class="btn w-100 text-start text-white collapsed p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <span class="text-uppercase mb-0 h5">9 Sep</span>
+                          <h4 class="headingText mb-0">Father's Day</h4>
+                        </button>
+                      </div>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#whatsonAccordion">
+                      <div class="card-body text-white p-0">
+                        <p class="cs-two-lines pt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor</p>
+                        <a href="#" class="text-decoration-none text-uppercase mb-0 h5">Learn More</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-lg-8 col-xl-6">
+                <a href="#" class="text-decoration-none">
+                  <button class="btn btn-primary d-flex align-items-center justify-content-center w-100 text-uppercase mb-0 letter-spacing-md h5" type="button">
+                    See All Events
+                    <img src="./images/arrow.svg" alt="arrow" class="ps-2"/>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 </body>
 </html>
