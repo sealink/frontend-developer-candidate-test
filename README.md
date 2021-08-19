@@ -4,7 +4,7 @@
 
 1. [View the design file in Figma](https://www.figma.com/file/LvtDr9iovqG4Uh6ELYU5Fb/SeaLink-Travel-Group-Front-end-Developer-code-test-Design?node-id=2%3A67)
 2. Using a mobile-first development approach, we'd like you to build the 'What's on' component from the Figma design
-  
+
 3. Specs of this component:
     * There are a limit of 3 events shown.
     * Event items are displayed as accordions. The first item loads in an active (open) state.
@@ -31,11 +31,24 @@ Once you have the project running as per the steps above, you're ready to start 
 1. As mentioned above, Webpack will re-build SCSS or JS as you save changes (compiled to `/app/dist/`).
 1. There are 3 images available to use, located in the `/app/images` directory.
 
+### Bootstrap
+
+We've included Bootstrap 5. Feel free to use it as much or as little as you like.
+
+### Other
+
+We’ve also included the following to use as you see fit:
+
+1. SASS colours
+1. A basic set of typography styles
+
 ---
 
 ## Solution
 
-We'll let you decide how you wish to create the component. There is no right or wrong answer here.
+We are looking for you to adhere to the design as best as possible while ensuring your code is clean and extensible.
+
+Other than that you're free to decide how you wish to create the component.
 
 ---
 
