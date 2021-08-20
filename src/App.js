@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.scss';
+import Info from './components/Info';
 
 const App = () => {
   return (
-    <div>
-      <p>test</p>
-    </div>
+    <>
+      <Info />
+    </>
   );
 };
 
