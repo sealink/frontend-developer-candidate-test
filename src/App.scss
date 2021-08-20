@@ -11,8 +11,11 @@
   --charcoal: #2e343f;
   --cream: #faf6ef;
 
-  /* define colors intentions */
+  /* define colours intentions */
   --backgroundColor: var(--cream);
+
+  /* spacing */
+  --baseSpace: 1.5rem;
 }
 
 html {

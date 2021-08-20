@@ -1,8 +1,10 @@
 export const breakpoint = {
-  small: 480, // or 576
-  medium: 768,
-  large: 992,
-  extraLarge: 1200,
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+  xxl: 1400,
 };
 
 export const customMediaQuery = (minWidth) => `
@@ -10,8 +12,10 @@ export const customMediaQuery = (minWidth) => `
 `;
 
 export const media = {
-  sm: customMediaQuery(breakpoint.small),
-  md: customMediaQuery(breakpoint.medium),
-  lg: customMediaQuery(breakpoint.large),
-  xl: customMediaQuery(breakpoint.extraLarge),
+  xs: customMediaQuery(breakpoint.xs),
+  sm: customMediaQuery(breakpoint.sm),
+  md: customMediaQuery(breakpoint.md),
+  lg: customMediaQuery(breakpoint.lg),
+  xl: customMediaQuery(breakpoint.xl),
+  xxl: customMediaQuery(breakpoint.xxl),
 };
