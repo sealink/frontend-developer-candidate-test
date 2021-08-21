@@ -1,26 +1,56 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../utilities';
 import Container from '../layouts/Container';
+import Accordion from '../elements/Accordion';
 
-export const Info = () => {
+const Info = ({
+  data,
+  limit = 3,
+  title = "what's on",
+  backgroundColor = 'var(--blue-300)',
+  textColor = 'white',
+  accordionTextColor = 'white',
+  accordionLinkColor = 'var(--gold-300)',
+  accordionDividerColor = 'var(--gold-200)',
+}) => {
+  const [activeNumber, setActiveNumber] = useState(0); // ToDo
+
+  const imageItems = data?.map((item, index) => {
+    while (index < limit) {
+      return (
+        <Fragment key={item.id}>
+          <img
+            className={index === activeNumber ? 'image-active' : ''}
+            src={item.image}
+            alt={item.title}
+          />
+        </Fragment>
+      );
+    }
+  });
+
   return (
-    <InfoWrapper>
+    <InfoWrapper backgroundColor={backgroundColor} textColor={textColor}>
       <div className='info-top-title'>
-        <h2>what's on</h2>
+        <h2>{title}</h2>
       </div>
       <div className='info-background'>
         <Container className='info-container'>
           <div className='info-side-title'>
-            <h2>what's on</h2>
+            <h2>{title}</h2>
           </div>
           <div className='info-image'>
-            <div className='image-ratio-container'>
-              <img src={'./images/vivid-sydney.jpg'} alt='Vivid Sydney' />
-            </div>
+            <div className='image-ratio-container'>{imageItems}</div>
           </div>
           <div className='info-accordion'>
-            <p>accordion</p>
+            <Accordion
+              data={data}
+              limit={limit}
+              textColor={accordionTextColor}
+              linkColor={accordionLinkColor}
+              dividerColor={accordionDividerColor}
+            />
           </div>
         </Container>
       </div>
@@ -31,6 +61,9 @@ export const Info = () => {
 export default Info;
 
 const InfoWrapper = styled.section`
+  --infoBackgroundColor: ${(props) => props.backgroundColor};
+  --infoTextColor: ${(props) => props.textColor};
+
   margin-bottom: 120px;
 
   ${media.md} {
@@ -42,7 +75,7 @@ const InfoWrapper = styled.section`
   }
 
   .info-top-title {
-    background: var(--blue-300);
+    background: var(--infoBackgroundColor);
 
     display: flex;
     align-items: center;
@@ -60,7 +93,7 @@ const InfoWrapper = styled.section`
     }
 
     h2 {
-      color: white;
+      color: var(--infoTextColor);
 
       ${media.lg} {
         display: none;
@@ -69,10 +102,9 @@ const InfoWrapper = styled.section`
   }
 
   .info-background {
-    background: var(--blue-300);
+    background: var(--infoBackgroundColor);
 
     .info-container {
-      max-height: 550px;
       padding-bottom: var(--baseSpace);
 
       ${media.md} {
@@ -81,6 +113,7 @@ const InfoWrapper = styled.section`
       }
 
       ${media.lg} {
+        max-height: 550px; /* ToDo */
         padding-bottom: 0;
       }
 
@@ -96,7 +129,7 @@ const InfoWrapper = styled.section`
         }
 
         h2 {
-          color: white;
+          color: var(--infoTextColor);
           white-space: nowrap;
           transform: rotate(-90deg);
           padding-top: 50px;
@@ -143,13 +176,19 @@ const InfoWrapper = styled.section`
           }
 
           img {
-            height: 100%;
+            display: none; /* ToDo */
+
             width: 100%;
+            height: 100%;
             object-fit: cover;
 
             ${media.lg} {
               height: 110%;
             }
+          }
+
+          .image-active {
+            display: block; /* ToDo */
           }
         }
       }
