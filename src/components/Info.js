@@ -16,7 +16,7 @@ export const Info = () => {
           </div>
           <div className='info-image'>
             <div className='image-ratio-container'>
-              <img alt='vivid-sydney' src={'./images/vivid-sydney.jpg'} />
+              <img src={'./images/vivid-sydney.jpg'} alt='Vivid Sydney' />
             </div>
           </div>
           <div className='info-accordion'>
@@ -31,15 +31,24 @@ export const Info = () => {
 export default Info;
 
 const InfoWrapper = styled.section`
+  margin-bottom: 120px;
+
+  ${media.md} {
+    margin-bottom: 130px;
+  }
+
+  ${media.lg} {
+    margin-bottom: 150px;
+  }
+
   .info-top-title {
-    /* background: green; // ToDo */
     background: var(--blue-300);
 
     display: flex;
     align-items: center;
 
     height: 120px;
-    padding: var(--baseSpace);
+    padding: 0 var(--baseSpace);
 
     ${media.md} {
       height: 130px;
@@ -76,7 +85,6 @@ const InfoWrapper = styled.section`
       }
 
       .info-side-title {
-        /* background: blue; // ToDo */
         display: none;
 
         ${media.lg} {
@@ -96,16 +104,18 @@ const InfoWrapper = styled.section`
       }
 
       .info-image {
-        /* background: aqua; // ToDo */
-
         width: 100%;
+        margin-bottom: var(--baseSpace);
 
         /* keep 360 : 250 ratio of image */
         position: relative;
         padding-top: 69.44%;
 
         ${media.md} {
-          width: 50%;
+          width: 45%;
+          margin-bottom: 0;
+
+          /* cancel ratio of image */
           padding-top: 0;
         }
 
@@ -114,6 +124,7 @@ const InfoWrapper = styled.section`
         }
 
         .image-ratio-container {
+          /* keep 360 : 250 ratio of image */
           position: absolute;
           top: 0;
           left: 0;
@@ -121,6 +132,7 @@ const InfoWrapper = styled.section`
           height: 100%;
 
           ${media.md} {
+            /* cancel ratio of image */
             position: static;
           }
 
@@ -143,11 +155,13 @@ const InfoWrapper = styled.section`
       }
 
       .info-accordion {
-        /* background: yellow; // ToDo */
-
         width: 100%;
 
         ${media.md} {
+          width: 55%;
+        }
+
+        ${media.lg} {
           width: 50%;
         }
       }
