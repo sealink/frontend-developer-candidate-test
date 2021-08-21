@@ -3,14 +3,23 @@ import './App.scss';
 import Container from './layouts/Container';
 import Info from './components/Info';
 
+// fetch data (e.g. from a headless CMS)
+import events from './data/events.json';
+import sealink from './data/sealink.json';
+
 const App = () => {
   return (
     <>
-      <Info />
+      <Info data={events} />
       <Container>
-        <h3>Example of another website using this reusable component</h3>
+        <p>Example of another website using this reusable component</p>
       </Container>
-      <Info />
+      <Info
+        data={sealink}
+        limit={5}
+        title='SeaLink'
+        backgroundColor='#008fd5'
+      />
     </>
   );
 };

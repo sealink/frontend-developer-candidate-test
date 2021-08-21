@@ -1,0 +1,29 @@
+[
+  {
+    "id": "vivid-sydney",
+    "smallTitle": "14-18 AUG",
+    "title": "Vivid Sydney",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor.",
+    "linkTitle": "LEARN MORE",
+    "link": "#",
+    "image": "/images/vivid-sydney.jpg"
+  },
+  {
+    "id": "queens-birthday",
+    "smallTitle": "16 JUN",
+    "title": "Queen's Birthday",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor.",
+    "linkTitle": "LEARN MORE",
+    "link": "#",
+    "image": "/images/queens-birthday-celebrations.jpg"
+  },
+  {
+    "id": "fathers-day",
+    "smallTitle": "9 SEP",
+    "title": "Father's Day",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor.",
+    "linkTitle": "LEARN MORE",
+    "link": "#",
+    "image": "/images/fathers-day-dining.jpg"
+  }
+]
