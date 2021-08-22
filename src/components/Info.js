@@ -10,7 +10,7 @@ const Info = ({
   title = "what's on",
   backgroundColor = 'var(--blue-300)',
   infoContainerMaxHeight = '550px',
-  textColor = 'white',
+  titleTextColor = 'white',
   accordionTextColor = 'white',
   accordionLinkColor = 'var(--gold-300)',
   accordionLinkHoverColor = '',
@@ -51,7 +51,7 @@ const Info = ({
     <InfoWrapper
       backgroundColor={backgroundColor}
       infoContainerMaxHeight={infoContainerMaxHeight}
-      textColor={textColor}
+      titleTextColor={titleTextColor}
       limit={limit}
     >
       <div className='info-top-title'>
@@ -102,7 +102,7 @@ export default Info;
 const InfoWrapper = styled.section`
   --infoBackgroundColor: ${(props) => props.backgroundColor};
   --infoContainerMaxHeight: ${(props) => props.infoContainerMaxHeight};
-  --infoTextColor: ${(props) => props.textColor};
+  --infoTitleTextColor: ${(props) => props.titleTextColor};
 
   --infoAccordionPaddingTopMultiplierMediaXl: ${(props) =>
     props.limit > 3 ? 1 : 2};
@@ -138,7 +138,7 @@ const InfoWrapper = styled.section`
     }
 
     h2 {
-      color: var(--infoTextColor);
+      color: var(--infoTitleTextColor);
 
       ${media.lg} {
         display: none;
@@ -174,7 +174,7 @@ const InfoWrapper = styled.section`
         }
 
         h2 {
-          color: var(--infoTextColor);
+          color: var(--infoTitleTextColor);
           white-space: nowrap;
           transform: rotate(-90deg);
           padding-top: 50px;
