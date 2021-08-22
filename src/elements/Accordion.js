@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef } from 'react';
 import styled from 'styled-components';
 
 const Accordion = ({
+  activeId,
+  onToggle,
   data,
   limit = 3,
   textColor = 'white',
@@ -9,16 +11,38 @@ const Accordion = ({
   linkHoverColor = '',
   dividerColor = 'var(--gold-200)',
 }) => {
+  const contentEl = useRef('');
+
   const accordionItems = data?.map((item, index) => {
     while (index < limit) {
       return (
         <Fragment key={item.id}>
-          <p className='p2 bold'>{item.smallTitle}</p>
-          <h2 className='h3-montserrat'>{item.title}</h2>
-          <p className='p1'>{item.content}</p>
-          <p className='p2 bold'>
-            <a href={item.link}>{item.linkTitle}</a>
-          </p>
+          <button type='button' onClick={() => onToggle(item.id)}>
+            <p className='p2 bold'>{item.smallTitle}</p>
+            <h2
+              className={`h3-montserrat ${
+                (index === 0 && !activeId) || activeId === item.id ? 'bold' : ''
+              }`}
+            >
+              {item.title}
+            </h2>
+          </button>
+          <div
+            ref={contentEl}
+            className={`accordion-content ${
+              (index === 0 && !activeId) || activeId === item.id ? 'open' : ''
+            }`}
+            style={
+              (index === 0 && !activeId) || activeId === item.id
+                ? { height: contentEl.current.scrollHeight }
+                : { height: '0px' }
+            }
+          >
+            <p className='p1'>{item.content}</p>
+            <p className='p2 bold'>
+              <a href={item.link}>{item.linkTitle}</a>
+            </p>
+          </div>
           <hr />
         </Fragment>
       );
@@ -56,19 +80,40 @@ const AccordionWrapper = styled.div`
     margin-bottom: var(--textMarginBottom);
   }
 
-  a {
-    color: var(--linkColor);
-    transition: color 0.3s ease, filter 0.3s ease;
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    &:hover,
-    &:focus {
-      color: var(--linkHoverColor);
-      filter: var(--filterBrightness);
+    width: 100%;
+  }
+
+  .accordion-content {
+    height: 0;
+    overflow: hidden;
+
+    transition: height 0.2s ease;
+
+    &.open {
+      height: auto;
+    }
+
+    a {
+      color: var(--linkColor);
+      transition: color 0.3s ease, filter 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: var(--linkHoverColor);
+        filter: var(--filterBrightness);
+      }
     }
   }
 
   hr {
-    margin: calc(var(--textMarginBottom) * 2) 0;
+    margin-top: calc(var(--textMarginBottom) * 0.5);
+    margin-bottom: calc(var(--textMarginBottom) * 1.5);
     border-top: 1px solid var(--dividerColor);
     border-right: none;
     border-left: none;

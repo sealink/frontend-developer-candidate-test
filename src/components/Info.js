@@ -9,20 +9,29 @@ const Info = ({
   limit = 3,
   title = "what's on",
   backgroundColor = 'var(--blue-300)',
+  infoContainerMaxHeight = '550px',
   textColor = 'white',
   accordionTextColor = 'white',
   accordionLinkColor = 'var(--gold-300)',
   accordionLinkHoverColor = '',
   accordionDividerColor = 'var(--gold-200)',
 }) => {
-  const [activeNumber, setActiveNumber] = useState(0); // ToDo
+  const [activeId, setActiveId] = useState('');
+
+  const handleToggle = (id) => {
+    setActiveId(id);
+  };
 
   const imageItems = data?.map((item, index) => {
     while (index < limit) {
       return (
         <Fragment key={item.id}>
           <img
-            className={index === activeNumber ? 'image-active' : ''}
+            className={
+              (index === 0 && !activeId) || activeId === item.id
+                ? 'active-image'
+                : ''
+            }
             src={item.image}
             alt={item.title}
           />
@@ -32,7 +41,11 @@ const Info = ({
   });
 
   return (
-    <InfoWrapper backgroundColor={backgroundColor} textColor={textColor}>
+    <InfoWrapper
+      backgroundColor={backgroundColor}
+      infoContainerMaxHeight={infoContainerMaxHeight}
+      textColor={textColor}
+    >
       <div className='info-top-title'>
         <h2>{title}</h2>
       </div>
@@ -46,6 +59,8 @@ const Info = ({
           </div>
           <div className='info-accordion'>
             <Accordion
+              activeId={activeId}
+              onToggle={handleToggle}
               data={data}
               limit={limit}
               textColor={accordionTextColor}
@@ -64,6 +79,7 @@ export default Info;
 
 const InfoWrapper = styled.section`
   --infoBackgroundColor: ${(props) => props.backgroundColor};
+  --infoContainerMaxHeight: ${(props) => props.infoContainerMaxHeight};
   --infoTextColor: ${(props) => props.textColor};
 
   margin-bottom: 120px;
@@ -115,7 +131,7 @@ const InfoWrapper = styled.section`
       }
 
       ${media.lg} {
-        max-height: 550px; /* ToDo */
+        max-height: var(--infoContainerMaxHeight);
         padding-bottom: 0;
       }
 
@@ -184,6 +200,11 @@ const InfoWrapper = styled.section`
             height: 100%;
             object-fit: cover;
 
+            &.active-image {
+              display: block; /* ToDo */
+              animation: fade-in 0.3s ease;
+            }
+
             ${media.md} {
               max-height: 550px; /* ToDo */
             }
@@ -194,8 +215,16 @@ const InfoWrapper = styled.section`
             }
           }
 
-          .image-active {
-            display: block; /* ToDo */
+          @keyframes fade-in {
+            from {
+              opacity: 0;
+              transform: translate3d(0, 30px, 0);
+            }
+
+            to {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
           }
         }
       }
@@ -205,17 +234,20 @@ const InfoWrapper = styled.section`
 
         ${media.md} {
           width: 55%;
-          padding: var(--baseSpace);
           padding-left: calc(var(--baseSpace) * 2);
         }
 
         ${media.lg} {
           width: 50%;
+          padding-top: calc(var(--baseSpace) * 1);
+        }
+
+        ${media.xl} {
           padding-top: calc(var(--baseSpace) * 2);
           padding-left: calc(var(--baseSpace) * 3);
         }
 
-        ${media.xl} {
+        ${media.xxl} {
           padding-top: calc(var(--baseSpace) * 3);
           padding-left: calc(var(--baseSpace) * 5);
         }

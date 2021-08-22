@@ -21,6 +21,7 @@ const App = () => {
         limit={5}
         title='SeaLink'
         backgroundColor='#008fd5'
+        infoContainerMaxHeight='100%'
         textColor='#f99d1c'
         accordionTextColor='var(--cream)'
         accordionLinkColor='#f99d1c'

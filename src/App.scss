@@ -70,3 +70,16 @@ body {
 a {
   text-decoration: none;
 }
+
+button * {
+  pointer-events: none;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
