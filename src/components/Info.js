@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../utilities';
 import { Container, Accordion, Button } from '../elements';
+import { ChevronRightSvg } from '../icons';
 
 const Info = ({
   data,
@@ -85,7 +86,9 @@ const Info = ({
               hoverBackgroundColor={buttonHoverBackgroundColor}
               onClick={() => (window.location.href = `${buttonLink}`)}
             >
-              {buttonText} ＞
+              {buttonText}
+              &nbsp;
+              <ChevronRightSvg stroke={buttonTextColor} />
             </Button>
           </div>
         </Container>
@@ -281,6 +284,10 @@ const InfoWrapper = styled.section`
         }
 
         .info-general-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
           margin: var(--baseSpace) 0;
         }
       }
