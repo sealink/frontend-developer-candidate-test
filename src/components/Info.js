@@ -23,6 +23,7 @@ const Info = ({
   buttonHoverBackgroundColor = '',
   buttonLink = '#',
 }) => {
+  const [limitItemNumber, setLimitItemNumber] = useState(limit);
   const [activeId, setActiveId] = useState('');
 
   const handleToggle = (id) => {
@@ -30,7 +31,7 @@ const Info = ({
   };
 
   const imageItems = data?.map((item, index) => {
-    while (index < limit) {
+    while (index < limitItemNumber) {
       return (
         <Fragment key={item.id}>
           <img
@@ -52,7 +53,7 @@ const Info = ({
       backgroundColor={backgroundColor}
       infoContainerMaxHeight={infoContainerMaxHeight}
       titleTextColor={titleTextColor}
-      limit={limit}
+      limitItemNumber={limitItemNumber}
     >
       <div className='info-top-title'>
         <h2>{title}</h2>
@@ -70,7 +71,7 @@ const Info = ({
               activeId={activeId}
               onToggle={handleToggle}
               data={data}
-              limit={limit}
+              limitItemNumber={limitItemNumber}
               textColor={accordionTextColor}
               linkColor={accordionLinkColor}
               linkHoverColor={accordionLinkHoverColor}
@@ -84,7 +85,7 @@ const Info = ({
               borderRadius={buttonBorderRadius}
               boxShadow={buttonBoxShadow}
               hoverBackgroundColor={buttonHoverBackgroundColor}
-              onClick={() => (window.location.href = `${buttonLink}`)}
+              onClick={() => setLimitItemNumber(data.length)}
             >
               {buttonText}
               &nbsp;
@@ -105,9 +106,9 @@ const InfoWrapper = styled.section`
   --infoTitleTextColor: ${(props) => props.titleTextColor};
 
   --infoAccordionPaddingTopMultiplierMediaXl: ${(props) =>
-    props.limit > 3 ? 1 : 2};
+    props.limitItemNumber > 3 ? 1 : 2};
   --infoAccordionPaddingTopMultiplierMediaXxl: ${(props) =>
-    props.limit > 3 ? 1 : 3};
+    props.limitItemNumber > 3 ? 1 : 3};
 
   margin-bottom: 120px;
 

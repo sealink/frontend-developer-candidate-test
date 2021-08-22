@@ -62,7 +62,7 @@ button {
   letter-spacing: 0.15em;
 }
 
-.h3-montserrat {
+.h2-montserrat {
   @include font($montserrat-400);
   font-size: calculateRem(22px);
   line-height: 0.9;

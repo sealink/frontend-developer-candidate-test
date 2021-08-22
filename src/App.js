@@ -10,8 +10,33 @@ const App = () => {
   return (
     <>
       <Info data={events} />
+
+      {/* The code below is just examples and comments. This is not for the code test */}
       <div>
-        <p style={{ padding: '200px var(--baseSpace) var(--baseSpace)' }}>
+        <p
+          style={{
+            padding: '200px var(--baseSpace) var(--baseSpace)',
+            fontSize: '18px',
+          }}
+        >
+          I normally use CSS variables, Flexbox and Grid for layout; however, I
+          used Bootstrap in the past.&nbsp;
+          <a
+            href='https://www.shankaramassageandyoga.com.au/index.html'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{
+              background: '#f99d1c',
+              color: 'white',
+              padding: '5px',
+              fontWeight: 'bold',
+              borderRadius: '4px',
+            }}
+          >
+            Link Here (example)
+          </a>
+        </p>
+        <p style={{ padding: 'var(--baseSpace)', fontSize: '18px' }}>
           An example of another website using this reusable component. It is
           easy to change text, colours, and so on with props.
         </p>

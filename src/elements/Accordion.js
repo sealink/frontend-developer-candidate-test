@@ -5,7 +5,7 @@ const Accordion = ({
   activeId,
   onToggle,
   data,
-  limit = 3,
+  limitItemNumber = 3,
   textColor = 'white',
   linkColor = 'var(--gold-300)',
   linkHoverColor = '',
@@ -14,13 +14,13 @@ const Accordion = ({
   const contentEl = useRef('');
 
   const accordionItems = data?.map((item, index) => {
-    while (index < limit) {
+    while (index < limitItemNumber) {
       return (
         <Fragment key={item.id}>
           <button type='button' onClick={() => onToggle(item.id)}>
             <p className='p2 bold'>{item.smallTitle}</p>
             <h2
-              className={`h3-montserrat ${
+              className={`h2-montserrat ${
                 (index === 0 && !activeId) || activeId === item.id ? 'bold' : ''
               }`}
             >
