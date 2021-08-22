@@ -55,6 +55,13 @@ h3,
   letter-spacing: 0.05em;
 }
 
+button {
+  @include font($montserrat-700);
+  font-size: calculateRem(12px);
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+}
+
 .h3-montserrat {
   @include font($montserrat-400);
   font-size: calculateRem(22px);

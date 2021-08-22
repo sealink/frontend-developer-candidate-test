@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../utilities';
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   padding: 0 var(--baseSpace);
 
@@ -14,5 +14,3 @@ const Container = styled.div`
     max-width: 1320px;
   }
 `;
-
-export default Container;

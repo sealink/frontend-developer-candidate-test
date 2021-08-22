@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../utilities';
-import Container from '../layouts/Container';
-import Accordion from '../elements/Accordion';
+import { Container, Accordion, Button } from '../elements';
 
 const Info = ({
   data,
@@ -15,6 +14,13 @@ const Info = ({
   accordionLinkColor = 'var(--gold-300)',
   accordionLinkHoverColor = '',
   accordionDividerColor = 'var(--gold-200)',
+  buttonText = 'SEE ALL EVENTS',
+  buttonBackgroundColor = 'var(--gold-300)',
+  buttonTextColor = 'white',
+  buttonBorderRadius = '0',
+  buttonBoxShadow = 'none',
+  buttonHoverBackgroundColor = '',
+  buttonLink = '#',
 }) => {
   const [activeId, setActiveId] = useState('');
 
@@ -45,6 +51,7 @@ const Info = ({
       backgroundColor={backgroundColor}
       infoContainerMaxHeight={infoContainerMaxHeight}
       textColor={textColor}
+      limit={limit}
     >
       <div className='info-top-title'>
         <h2>{title}</h2>
@@ -68,6 +75,18 @@ const Info = ({
               linkHoverColor={accordionLinkHoverColor}
               dividerColor={accordionDividerColor}
             />
+            <Button
+              type='button'
+              className='info-general-button'
+              backgroundColor={buttonBackgroundColor}
+              color={buttonTextColor}
+              borderRadius={buttonBorderRadius}
+              boxShadow={buttonBoxShadow}
+              hoverBackgroundColor={buttonHoverBackgroundColor}
+              onClick={() => (window.location.href = `${buttonLink}`)}
+            >
+              {buttonText} ＞
+            </Button>
           </div>
         </Container>
       </div>
@@ -81,6 +100,11 @@ const InfoWrapper = styled.section`
   --infoBackgroundColor: ${(props) => props.backgroundColor};
   --infoContainerMaxHeight: ${(props) => props.infoContainerMaxHeight};
   --infoTextColor: ${(props) => props.textColor};
+
+  --infoAccordionPaddingTopMultiplierMediaXl: ${(props) =>
+    props.limit > 3 ? 1 : 2};
+  --infoAccordionPaddingTopMultiplierMediaXxl: ${(props) =>
+    props.limit > 3 ? 1 : 3};
 
   margin-bottom: 120px;
 
@@ -202,7 +226,7 @@ const InfoWrapper = styled.section`
 
             &.active-image {
               display: block; /* ToDo */
-              animation: fade-in 0.3s ease;
+              animation: fade-in 0.5s ease;
             }
 
             ${media.md} {
@@ -218,7 +242,7 @@ const InfoWrapper = styled.section`
           @keyframes fade-in {
             from {
               opacity: 0;
-              transform: translate3d(0, 30px, 0);
+              transform: translate3d(-200px, 0, 0);
             }
 
             to {
@@ -239,17 +263,25 @@ const InfoWrapper = styled.section`
 
         ${media.lg} {
           width: 50%;
-          padding-top: calc(var(--baseSpace) * 1);
+          padding-top: var(--baseSpace);
         }
 
         ${media.xl} {
-          padding-top: calc(var(--baseSpace) * 2);
+          padding-top: calc(
+            var(--baseSpace) * var(--infoAccordionPaddingTopMultiplierMediaXl)
+          );
           padding-left: calc(var(--baseSpace) * 3);
         }
 
         ${media.xxl} {
-          padding-top: calc(var(--baseSpace) * 3);
+          padding-top: calc(
+            var(--baseSpace) * var(--infoAccordionPaddingTopMultiplierMediaXxl)
+          );
           padding-left: calc(var(--baseSpace) * 5);
+        }
+
+        .info-general-button {
+          margin: var(--baseSpace) 0;
         }
       }
     }

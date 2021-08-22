@@ -67,7 +67,7 @@ const AccordionWrapper = styled.div`
   --textColor: ${(props) => props.textColor};
   --linkColor: ${(props) => props.linkColor};
   --linkHoverColor: ${(props) => props.linkHoverColor || 'var(--linkColor)'};
-  --filterBrightness: ${(props) =>
+  --hoverFilterBrightness: ${(props) =>
     props.linkHoverColor ? 'brightness(1)' : 'brightness(1.1)'};
   --dividerColor: ${(props) => props.dividerColor};
 
@@ -106,7 +106,7 @@ const AccordionWrapper = styled.div`
       &:hover,
       &:focus {
         color: var(--linkHoverColor);
-        filter: var(--filterBrightness);
+        filter: var(--hoverFilterBrightness);
       }
     }
   }
