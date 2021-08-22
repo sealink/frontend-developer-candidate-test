@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import Container from './layouts/Container';
 import Info from './components/Info';
 
 // fetch data (e.g. from a headless CMS)
@@ -11,9 +10,12 @@ const App = () => {
   return (
     <>
       <Info data={events} />
-      <Container>
-        <p>Example of another website using this reusable component</p>
-      </Container>
+      <div>
+        <p style={{ padding: '200px var(--baseSpace) var(--baseSpace)' }}>
+          An example of another website using this reusable component. It is
+          easy to change text, colours, and so on with props.
+        </p>
+      </div>
       <Info
         data={sealink}
         limit={5}
@@ -22,6 +24,7 @@ const App = () => {
         textColor='#f99d1c'
         accordionTextColor='var(--cream)'
         accordionLinkColor='#f99d1c'
+        accordionLinkHoverColor=''
         accordionDividerColor='#f99d1c'
       />
     </>

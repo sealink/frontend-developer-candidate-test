@@ -5,13 +5,9 @@ const Container = styled.div`
   width: 100%;
   padding: 0 var(--baseSpace);
 
-  ${media.lg} {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
   ${media.xl} {
     max-width: 1140px;
+    margin: 0 auto;
   }
 
   ${media.xxl} {

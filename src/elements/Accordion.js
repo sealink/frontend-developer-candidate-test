@@ -6,6 +6,7 @@ const Accordion = ({
   limit = 3,
   textColor = 'white',
   linkColor = 'var(--gold-300)',
+  linkHoverColor = '',
   dividerColor = 'var(--gold-200)',
 }) => {
   const accordionItems = data?.map((item, index) => {
@@ -16,9 +17,7 @@ const Accordion = ({
           <h2 className='h3-montserrat'>{item.title}</h2>
           <p className='p1'>{item.content}</p>
           <p className='p2 bold'>
-            <a className='accordion-link' href={item.link}>
-              {item.linkTitle}
-            </a>
+            <a href={item.link}>{item.linkTitle}</a>
           </p>
           <hr />
         </Fragment>
@@ -30,6 +29,7 @@ const Accordion = ({
     <AccordionWrapper
       textColor={textColor}
       linkColor={linkColor}
+      linkHoverColor={linkHoverColor}
       dividerColor={dividerColor}
     >
       {accordionItems}
@@ -42,21 +42,33 @@ export default Accordion;
 const AccordionWrapper = styled.div`
   --textColor: ${(props) => props.textColor};
   --linkColor: ${(props) => props.linkColor};
+  --linkHoverColor: ${(props) => props.linkHoverColor || 'var(--linkColor)'};
+  --filterBrightness: ${(props) =>
+    props.linkHoverColor ? 'brightness(1)' : 'brightness(1.1)'};
   --dividerColor: ${(props) => props.dividerColor};
+
+  --textMarginBottom: 0.85rem;
 
   color: var(--textColor);
 
   h2,
   p {
-    margin-bottom: 1.05rem;
+    margin-bottom: var(--textMarginBottom);
   }
 
-  .accordion-link {
+  a {
     color: var(--linkColor);
+    transition: color 0.3s ease, filter 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--linkHoverColor);
+      filter: var(--filterBrightness);
+    }
   }
 
   hr {
-    margin: 2.1rem 0;
+    margin: calc(var(--textMarginBottom) * 2) 0;
     border-top: 1px solid var(--dividerColor);
     border-right: none;
     border-left: none;

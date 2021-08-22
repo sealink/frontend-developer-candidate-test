@@ -12,6 +12,7 @@ const Info = ({
   textColor = 'white',
   accordionTextColor = 'white',
   accordionLinkColor = 'var(--gold-300)',
+  accordionLinkHoverColor = '',
   accordionDividerColor = 'var(--gold-200)',
 }) => {
   const [activeNumber, setActiveNumber] = useState(0); // ToDo
@@ -49,6 +50,7 @@ const Info = ({
               limit={limit}
               textColor={accordionTextColor}
               linkColor={accordionLinkColor}
+              linkHoverColor={accordionLinkHoverColor}
               dividerColor={accordionDividerColor}
             />
           </div>
@@ -182,8 +184,13 @@ const InfoWrapper = styled.section`
             height: 100%;
             object-fit: cover;
 
+            ${media.md} {
+              max-height: 550px; /* ToDo */
+            }
+
             ${media.lg} {
               height: 110%;
+              max-height: 650px; /* ToDo */
             }
           }
 
@@ -198,10 +205,19 @@ const InfoWrapper = styled.section`
 
         ${media.md} {
           width: 55%;
+          padding: var(--baseSpace);
+          padding-left: calc(var(--baseSpace) * 2);
         }
 
         ${media.lg} {
           width: 50%;
+          padding-top: calc(var(--baseSpace) * 2);
+          padding-left: calc(var(--baseSpace) * 3);
+        }
+
+        ${media.xl} {
+          padding-top: calc(var(--baseSpace) * 3);
+          padding-left: calc(var(--baseSpace) * 5);
         }
       }
     }
