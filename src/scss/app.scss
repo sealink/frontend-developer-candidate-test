@@ -9,5 +9,12 @@
 
 // Components
 @import "components/typography";
+@import "components/accordion";
+@import "components/button";
 
 // Add your custom scss here
+@import "custom";
+
+//variables
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

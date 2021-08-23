@@ -1,0 +1,63 @@
+@import "settings";
+
+@media (max-width: 991px) {
+  .heading-text {
+    display: flex;
+    align-items: center;
+    color: white;
+    white-space: nowrap;
+    margin-left: 6%;
+    letter-spacing: 0.05em;
+    margin-top: 60px;
+  }
+  .inner {
+    height: 888px;
+    background-color: $blue-300;
+  }
+  .image {
+    height: 250px;
+    width: 87%;
+    margin-left: 6%;
+  }
+  .btn-custom {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .outer {
+    height: 899px;
+    background-color: $cream;
+    padding-top: 172px;
+    padding-bottom: 172px;
+  }
+  .heading-text {
+    transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    height: 555px;
+    display: flex;
+    align-items: center;
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+  .inner {
+    height: 555px;
+    background-color: $blue-300;
+  }
+  .image {
+    position: absolute;
+    height: 650px;
+    top: -50px;
+    width: 100%;
+  }
+  .accordion {
+    padding-left: 3%;
+    padding-top: 8%;
+    width: 70%;
+  }
+  .btn-custom {
+    width: 48%;
+  }
+}
