@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Accordion = ({
@@ -11,43 +11,55 @@ const Accordion = ({
   linkHoverColor = '',
   dividerColor = 'var(--gold-200)',
 }) => {
-  const contentEl = useRef('');
+  const elementRef = useRef(null);
+  const [accordionContentHeight, setAccordionContentHeight] = useState('0px');
 
-  const accordionItems = data?.map((item, index) => {
-    while (index < limitItemNumber) {
-      return (
-        <Fragment key={item.id}>
-          <button type='button' onClick={() => handleActiveId(item.id)}>
-            <p className='p2 bold'>{item.smallTitle}</p>
-            <h2
-              className={`h2-montserrat ${
-                (index === 0 && !activeId) || activeId === item.id ? 'bold' : ''
-              }`}
+  // useEffect(() => {
+  //   if (!elementRef.current) {
+  //     return;
+  //   }
+
+  //   setAccordionContentHeight(`${elementRef.current.scrollHeight}px`);
+  // }, []);
+
+  const accordionItems = data?.map(
+    ({ id, smallTitle, title, content, linkTitle, link }, index) => {
+      while (index < limitItemNumber) {
+        return (
+          <Fragment key={id}>
+            <button
+              type='button'
+              onClick={() => {
+                handleActiveId(id);
+              }}
             >
-              {item.title}
-            </h2>
-          </button>
-          <div
-            ref={contentEl}
-            className={`accordion-content ${
-              (index === 0 && !activeId) || activeId === item.id ? 'open' : ''
-            }`}
-            style={
-              (index === 0 && !activeId) || activeId === item.id
-                ? { height: contentEl.current.scrollHeight }
-                : { height: '0px' }
-            }
-          >
-            <p className='p1'>{item.content}</p>
-            <p className='p2 bold'>
-              <a href={item.link}>{item.linkTitle}</a>
-            </p>
-          </div>
-          <hr />
-        </Fragment>
-      );
+              <p className='p2 bold'>{smallTitle}</p>
+              <h2
+                className={`h2-montserrat ${
+                  (!activeId && index === 0) || id === activeId ? 'bold' : ''
+                }`}
+              >
+                {title}
+              </h2>
+            </button>
+            <div
+              ref={elementRef}
+              className='accordion-content'
+              data-item-active={
+                (!activeId && index === 0) || id === activeId ? 'active' : ''
+              }
+            >
+              <p className='p1'>{content}</p>
+              <p className='p2 bold'>
+                <a href={link}>{linkTitle}</a>
+              </p>
+            </div>
+            <hr />
+          </Fragment>
+        );
+      }
     }
-  });
+  );
 
   return (
     <AccordionWrapper
@@ -55,6 +67,7 @@ const Accordion = ({
       linkColor={linkColor}
       linkHoverColor={linkHoverColor}
       dividerColor={dividerColor}
+      accordionContentHeight={accordionContentHeight}
     >
       {accordionItems}
     </AccordionWrapper>
@@ -70,6 +83,8 @@ const AccordionWrapper = styled.div`
   --hoverFilterBrightness: ${(props) =>
     props.linkHoverColor ? 'brightness(1)' : 'brightness(1.1)'};
   --dividerColor: ${(props) => props.dividerColor};
+
+  --accordionContentHeight: ${(props) => props.accordionContentHeight};
 
   --textMarginBottom: 0.85rem;
 
@@ -95,7 +110,8 @@ const AccordionWrapper = styled.div`
 
     transition: height 0.2s ease;
 
-    &.open {
+    &[data-item-active='active'] {
+      /* height: var(--accordionContentHeight); */
       height: auto;
     }
 
