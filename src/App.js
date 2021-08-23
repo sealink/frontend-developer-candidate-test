@@ -43,7 +43,7 @@ const App = () => {
       </div>
       <Info
         data={sealink}
-        limit={5}
+        limit={7}
         infoTitle='SeaLink'
         infoBackgroundColor='#008fd5'
         infoContainerMaxHeight='100%'
