@@ -11,16 +11,20 @@ const Accordion = ({
   linkHoverColor = '',
   dividerColor = 'var(--gold-200)',
 }) => {
-  const elementRef = useRef(null);
+  const elementRefs = useRef([]);
   const [accordionContentHeight, setAccordionContentHeight] = useState('0px');
 
-  // useEffect(() => {
-  //   if (!elementRef.current) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!elementRefs.current[0]) {
+      return;
+    }
 
-  //   setAccordionContentHeight(`${elementRef.current.scrollHeight}px`);
-  // }, []);
+    setAccordionContentHeight(`${elementRefs.current[0].scrollHeight}px`);
+  }, []);
+
+  const handleAccordionContentHeight = (index) => {
+    setAccordionContentHeight(`${elementRefs.current[index].scrollHeight}px`);
+  };
 
   const accordionItems = data?.map(
     ({ id, smallTitle, title, content, linkTitle, link }, index) => {
@@ -31,6 +35,7 @@ const Accordion = ({
               type='button'
               onClick={() => {
                 handleActiveId(id);
+                handleAccordionContentHeight(index);
               }}
             >
               <p className='p2 bold'>{smallTitle}</p>
@@ -43,7 +48,9 @@ const Accordion = ({
               </h2>
             </button>
             <div
-              ref={elementRef}
+              ref={(element) => {
+                elementRefs.current[index] = element;
+              }}
               className='accordion-content'
               data-item-active={
                 (!activeId && index === 0) || id === activeId ? 'active' : ''
@@ -111,8 +118,7 @@ const AccordionWrapper = styled.div`
     transition: height 0.2s ease;
 
     &[data-item-active='active'] {
-      /* height: var(--accordionContentHeight); */
-      height: auto;
+      height: var(--accordionContentHeight);
     }
 
     a {
