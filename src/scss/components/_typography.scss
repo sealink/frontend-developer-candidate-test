@@ -3,11 +3,11 @@
   font-weight: nth($list, 2);
 }
 
-$bebas-neue: ("Bebas Neue", cursive) 700;
-$montserrat-400: ("Montserrat", sans-serif) 400;
-$montserrat-600: ("Montserrat", sans-serif) 600;
-$montserrat-700: ("Montserrat", sans-serif) 700;
-$montserrat-900: ("Montserrat", sans-serif) 900;
+$bebas-neue: ('Bebas Neue', cursive) 700;
+$montserrat-400: ('Montserrat', sans-serif) 400;
+$montserrat-600: ('Montserrat', sans-serif) 600;
+$montserrat-700: ('Montserrat', sans-serif) 700;
+$montserrat-900: ('Montserrat', sans-serif) 900;
 
 //
 // Root
@@ -53,4 +53,34 @@ h3,
   font-size: calculateRem(30px);
   line-height: 0.9;
   letter-spacing: 0.05em;
+}
+
+button {
+  @include font($montserrat-700);
+  font-size: calculateRem(12px);
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+}
+
+.h2-montserrat {
+  @include font($montserrat-400);
+  font-size: calculateRem(22px);
+  line-height: 0.9;
+}
+
+.p1 {
+  @include font($montserrat-400);
+  font-size: calculateRem(15px);
+  line-height: 1.2;
+}
+
+.p2 {
+  @include font($montserrat-400);
+  font-size: calculateRem(12px);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+
+.bold {
+  font-weight: bold;
 }
