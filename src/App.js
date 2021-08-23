@@ -44,10 +44,10 @@ const App = () => {
       <Info
         data={sealink}
         limit={5}
-        title='SeaLink'
-        backgroundColor='#008fd5'
+        infoTitle='SeaLink'
+        infoBackgroundColor='#008fd5'
         infoContainerMaxHeight='100%'
-        titleTextColor='#f99d1c'
+        infoTitleTextColor='#f99d1c'
         accordionTextColor='var(--cream)'
         accordionLinkColor='#f99d1c'
         accordionLinkHoverColor=''
@@ -58,7 +58,6 @@ const App = () => {
         buttonBorderRadius='4px'
         buttonBoxShadow='0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)'
         buttonHoverBackgroundColor=''
-        buttonLink='https://brillianttravels.com.au/our-family/sealink/'
       />
     </>
   );

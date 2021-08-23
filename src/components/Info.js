@@ -5,12 +5,12 @@ import { Container, Accordion, Button } from '../elements';
 import { ChevronRightSvg } from '../icons';
 
 const Info = ({
-  data,
+  data = [],
   limit = 3,
-  title = "what's on",
-  backgroundColor = 'var(--blue-300)',
+  infoTitle = "what's on",
+  infoBackgroundColor = 'var(--blue-300)',
   infoContainerMaxHeight = '550px',
-  titleTextColor = 'white',
+  infoTitleTextColor = 'white',
   accordionTextColor = 'white',
   accordionLinkColor = 'var(--gold-300)',
   accordionLinkHoverColor = '',
@@ -21,27 +21,24 @@ const Info = ({
   buttonBorderRadius = '0',
   buttonBoxShadow = 'none',
   buttonHoverBackgroundColor = '',
-  buttonLink = '#',
 }) => {
   const [limitItemNumber, setLimitItemNumber] = useState(limit);
   const [activeId, setActiveId] = useState('');
 
-  const handleToggle = (id) => {
+  const handleActiveId = (id) => {
     setActiveId(id);
   };
 
-  const imageItems = data?.map((item, index) => {
+  const imageItems = data?.map(({ id, image, title }, index) => {
     while (index < limitItemNumber) {
       return (
-        <Fragment key={item.id}>
+        <Fragment key={id}>
           <img
-            className={
-              (index === 0 && !activeId) || activeId === item.id
-                ? 'active-image'
-                : ''
+            src={image}
+            alt={title}
+            data-image-active={
+              (!activeId && index === 0) || id === activeId ? 'active' : ''
             }
-            src={item.image}
-            alt={item.title}
           />
         </Fragment>
       );
@@ -50,18 +47,18 @@ const Info = ({
 
   return (
     <InfoWrapper
-      backgroundColor={backgroundColor}
+      infoBackgroundColor={infoBackgroundColor}
       infoContainerMaxHeight={infoContainerMaxHeight}
-      titleTextColor={titleTextColor}
+      infoTitleTextColor={infoTitleTextColor}
       limitItemNumber={limitItemNumber}
     >
       <div className='info-top-title'>
-        <h2>{title}</h2>
+        <h2>{infoTitle}</h2>
       </div>
       <div className='info-background'>
         <Container className='info-container'>
           <div className='info-side-title'>
-            <h2>{title}</h2>
+            <h2>{infoTitle}</h2>
           </div>
           <div className='info-image'>
             <div className='image-ratio-container'>{imageItems}</div>
@@ -69,7 +66,7 @@ const Info = ({
           <div className='info-accordion'>
             <Accordion
               activeId={activeId}
-              onToggle={handleToggle}
+              handleActiveId={handleActiveId}
               data={data}
               limitItemNumber={limitItemNumber}
               textColor={accordionTextColor}
@@ -101,10 +98,11 @@ const Info = ({
 export default Info;
 
 const InfoWrapper = styled.section`
-  --infoBackgroundColor: ${(props) => props.backgroundColor};
+  --infoBackgroundColor: ${(props) => props.infoBackgroundColor};
   --infoContainerMaxHeight: ${(props) => props.infoContainerMaxHeight};
-  --infoTitleTextColor: ${(props) => props.titleTextColor};
+  --infoTitleTextColor: ${(props) => props.infoTitleTextColor};
 
+  /* if items are grater than 3, reduce the padding top of info-accordion class */
   --infoAccordionPaddingTopMultiplierMediaXl: ${(props) =>
     props.limitItemNumber > 3 ? 1 : 2};
   --infoAccordionPaddingTopMultiplierMediaXxl: ${(props) =>
@@ -222,24 +220,24 @@ const InfoWrapper = styled.section`
           }
 
           img {
-            display: none; /* ToDo */
+            display: none;
 
             width: 100%;
             height: 100%;
             object-fit: cover;
 
-            &.active-image {
-              display: block; /* ToDo */
+            &[data-image-active='active'] {
+              display: block;
               animation: fade-in 0.5s ease;
             }
 
             ${media.md} {
-              max-height: 550px; /* ToDo */
+              max-height: 550px;
             }
 
             ${media.lg} {
               height: 110%;
-              max-height: 650px; /* ToDo */
+              max-height: 650px;
             }
           }
 
@@ -289,7 +287,12 @@ const InfoWrapper = styled.section`
           justify-content: center;
           align-items: center;
 
+          width: 100%;
           margin: var(--baseSpace) 0;
+
+          ${media.md} {
+            width: auto;
+          }
         }
       }
     }

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Accordion = ({
   activeId,
-  onToggle,
-  data,
+  handleActiveId,
+  data = [],
   limitItemNumber = 3,
   textColor = 'white',
   linkColor = 'var(--gold-300)',
@@ -17,7 +17,7 @@ const Accordion = ({
     while (index < limitItemNumber) {
       return (
         <Fragment key={item.id}>
-          <button type='button' onClick={() => onToggle(item.id)}>
+          <button type='button' onClick={() => handleActiveId(item.id)}>
             <p className='p2 bold'>{item.smallTitle}</p>
             <h2
               className={`h2-montserrat ${
