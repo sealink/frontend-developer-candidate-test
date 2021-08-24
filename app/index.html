@@ -12,8 +12,149 @@
 
   <link rel="stylesheet" href="/dist/app.css">
   <script src="/dist/app.js"></script>
+
+  <style type="text/css">
+    body {
+      background-color: #00526a;
+      height: 414px;
+      width: 85%;
+      padding: auto;
+    }
+    img{
+      width: 80%;
+      padding: 1rem 1rem;
+    }
+    hr{
+      width: 80%;
+      background-color: #ece7d4;
+      height: 1px;
+      border: 2px;
+      margin-left: 1rem;
+    }
+    .title{
+      color: #fff;
+      flex: 1 1 auto;
+      padding-top: 4rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+    }
+    .card{
+      background-color: #00526a;
+      color: #fff;
+      border: 0px;
+    }
+    .heading{
+      flex: 1 1 auto;
+      padding: 1rem 1rem;
+    }
+    .accordion{border: 0px;}
+    .button-event{padding: 1rem 1rem;}
+    .AllEvent{
+      background-color: #ba9f55;
+      border-color: #ba9f55;
+      width: 85%;
+    }
+    .eventLink{color: #ba9f55;}
+
+    .show .eventImg{display: block;}
+    .close .eventImg{display: none;}
+    .show .accordionItemContent{
+      display: block;
+      width: 80%;
+    }
+    .close .accordionItemContent{display: none;}
+  </style>
+
 </head>
 <body>
-  Add your markup here
+  <div class="title">
+    <h1>
+      WHAT'S ON
+    </h1>
+</div>
+<div id="accordion">
+ <div class="card show">
+
+   <div class="eventImg">
+    <img src="/images/vivid-sydney.jpg" alt="">
+   </div>
+
+   <div class="heading" id="headingOne">
+    <p>14-18 AUG</p>
+    <h3 class="accordionItemHeading">
+      Vivid Sydney
+    </h3>
+   </div>
+
+   <div id="collapseOne" class="accordionItemContent" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="card-body">
+      <table>
+        <tbody >
+          <tr><td>Lorem ispum dolor sit amert, consectetur adipiscing elit. Quis ac sagittis tristique platea praesent leo a porttitor.</td></tr>
+          <tr><td><a href="" class="eventLink">LEARN MORE</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+   </div>
+ </div>
+
+ <hr style="height: 3px;"/>
+
+ <div class="card close">
+
+  <div class="eventImg">
+    <img src="/images/queens-birthday-celebrations.jpg" alt="">
+  </div>
+
+  <div class="heading" id="headingTwo">
+    <p>16 JUN</p>
+    <h3 class="accordionItemHeading">
+      Queen's Birthday
+    </h3>
+  </div>
+
+  <div id="collapseTwo" class="accordionItemContent" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="card-body">
+      <table>
+        <tbody>
+          <tr><td>This is Queen's Birthday, **********************************************************************</td></tr>
+          <tr><td><a href="" class="eventLink">LEARN MORE</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<hr style="height: 3px;"/>
+
+<div class="card close">
+
+  <div class="eventImg">
+    <img src="/images/fathers-day-dining.jpg" alt="">
+  </div>
+
+  <div class="heading" id="headingThree">
+    <p>9 SEP</p>
+    <h3 class="accordionItemHeading">
+      Father's Day
+    </h3>
+  </div>
+
+  <div id="collapseThree" class="accordionItemContent" aria-labelledby="headingThree" data-parent="#accordion">
+   <div class="card-body">
+    <table>
+      <tbody>
+        <tr><td>This is Father's Day, **********************************************************************</td></tr>
+        <tr><td><a href="" class="eventLink">LEARN MORE</a></td></tr>
+      </tbody>
+    </table>
+   </div>
+  </div>
+</div>
+</div>
+
+<div class="button-event">
+  <a class="btn btn-primary AllEvent" href="#" role="button">SEE ALL EVENTS ></a>
+</div>
 </body>
 </html>
